@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <math.h>
-
+#include <math.h> // To use the pow function and sqrt function
+/*----------------- Function Declaration ------------------*/
 void userInput(double* a, double* b, double* c);
 double squared(double num1, double num2);
 void output(double a, double b, double c);
@@ -8,13 +8,11 @@ void output(double a, double b, double c);
 int main()
 {
     double valueA, valueB, valueC;
-
     userInput(&valueA, &valueB, &valueC);
     output(valueA, valueB, valueC);
-
     return 0;
 }
-
+/*------------------- Function Definition ---------------*/
 void userInput(double* a, double* b, double* c){
     printf("Enter the value of a: ");
     scanf("%lf", a);
@@ -23,11 +21,6 @@ void userInput(double* a, double* b, double* c){
     printf("Enter the value of c: ");
     scanf("%lf", c);
 }
-
-double squared(double num1, double num2){
-    return num1 * num2;
-}
-
 void output(double a, double b, double c){
     double root;
     double discriminate;
@@ -43,7 +36,7 @@ void output(double a, double b, double c){
         printf("\nThere is only one root: %.2lf", root);
     }
     else{
-        discriminate = squared(b,b) - 4 * a * c;
+        discriminate = pow(b,b) - 4 * a * c;
         if(discriminate < 0){
             //If the discriminate is negative, there are no real roots.
             printf("\nThere are no real roots.");
